@@ -1,0 +1,127 @@
+<!-- MODULES PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DASS Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-center">
+        <!-- links -->
+        <ul class="links">
+          <li>
+            <a href="index.html">COURSES &nbsp;&nbsp;</a>
+          </li>
+          <li>
+            <a href="modules.html">MODULES &nbsp;&nbsp;</a>
+          </li>
+          <li>
+            <a href="subskills.html">SUBSKILLS &nbsp;&nbsp;</a>
+          </li>
+          <li>
+            <a href="skilltopics.html">SKILL TOPICS</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h2>MODULES</h2>
+    <section class="outer_crud_content">
+      <section class="crud_content">
+        <!-- CREATE -->
+        <h3>Create</h3>
+        <form id="moduleForm">
+          <div>
+            <label for="module_name">module Name:</label>
+            <input type="text" id="module_name" name="module_name" required />
+          </div>
+          <button type="submit" onclick="submitForm_AM(event)">
+            Add module
+          </button>
+        </form>
+
+        <!-- READ -->
+        <h3>Display</h3>
+        <form id="moduleFormRead">
+          <button type="submit" onclick="submitForm_RM(event)">
+            Read all modules
+          </button>
+        </form>
+        <div id="read_output"></div>
+
+        <!-- UPDATE -->
+        <h3>Update</h3>
+        <form id="moduleFormupd">
+          <div>
+            <label for="module_name_upd_old">Module to be updated:</label>
+            <select
+              id="module_name_upd_old"
+              name="module_name_upd_old"
+              onfocus="populateOldModuleName()"
+            >
+              <option value="">Select a module</option>
+            </select>
+          </div>
+          <div>
+            <label for="module_name">New module Name:</label>
+            <input
+              type="text"
+              id="module_name_upd_new"
+              name="module_name_upd_new"
+              required
+            />
+          </div>
+          <button type="submit" onclick="submitForm_UM(event)">
+            Update module
+          </button>
+        </form>
+
+        <!-- DELETE -->
+        <h3>Delete</h3>
+        <form id="moduleFormdel">
+          <label for="module_name_del"> Module Name: </label>
+            <select
+              id="module_name_del"
+              name="module_name_del"
+              onfocus="populateOldModuleName1()"
+            >
+              <option value="">Select a module</option>
+            </select>
+          <button type="submit" onclick="submitForm_DM(event)">
+            Delete module
+          </button>
+        </form>
+        <!-- MODULE-SUBSKILL-LINK -->
+        <h3>Add a subskill to a module</h3>
+        <form id="module_Forss_link">
+          <div>
+            <label for="module_name_ss_link"> Module </label>
+            <select
+              id="module_name_ss_link"
+              name="module_name_ss_link"
+              onfocus="populateOldModuleName3()"
+            >
+              <option value="">Select a module</option>
+            </select>
+          </div>
+          <div>
+            <label for="ss_name_module_link"> Subskill </label>
+            <select
+              id="ss_name_module_link"
+              name="ss_name_module_link"
+              onfocus="populateOldSubskillName2()"
+            >
+              <option value="">Select a module</option>
+            </select>
+          </div>
+          <button type="submit" onclick="submitForm_AMSL(event)">
+            Link SubSkill to Module
+          </button>
+        </form>
+      </section>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
